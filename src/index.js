@@ -39,9 +39,18 @@ console.log(dogInfo.childNodes.length)
             dogInfo.appendChild(img)
             dogInfo.appendChild(h2)
             dogInfo.appendChild(btn)
+            btn.addEventListener('click', ()=>{
+                console.log(`${pup.name}`)
+                if (btn.textContent == 'Good Dog!'){
+                    btn.textContent = 'Bad Dog!' 
+                }else{
+                    btn.textContent = 'Good Dog!';
+                }
+                
+            })
         }else{
             dogInfo.innerHTML = ""
-            const img = document.createElement('img')
+             const img = document.createElement('img')
             img.src = `${pup.image}`
     
             const h2 = document.createElement('h2')
@@ -52,19 +61,22 @@ console.log(dogInfo.childNodes.length)
             dogInfo.appendChild(img)
             dogInfo.appendChild(h2)
             dogInfo.appendChild(btn)
+            btn.addEventListener('click', ()=>{
+                console.log(`${pup.name}`)
+                if (btn.textContent == 'Good Dog!'){
+                    btn.textContent = 'Bad Dog!' 
+                }else{
+                    btn.textContent = 'Good Dog!';
+                }
+                
+            })
 
         }
      })
 
-        // btn.addEventListener('click', ()=>{
-        //     console.log(`${pup.name}`)
-        //     if (btn.textContent == 'Good Dog!'){
-        //         btn.textContent = 'Bad Dog!' 
-        //     }else{
-        //         btn.textContent = 'Good Dog!';
-        //     }
-            
-        // })
+    
+
+      
         
     })
   
