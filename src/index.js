@@ -24,25 +24,47 @@ function renderPup(pup){
         const btn = document.createElement('button')
         btn.textContent = 'Good Dog!'
         // btn.style.display = 'block'
-
-        const btn2 = document.createElement('button')
-        btn2.textContent = 'Bad dog'
-        btn2.style.display ='none'
-        dogInfo.appendChild(btn2)
+console.log(dogInfo.childNodes.length)
+     span.addEventListener('click', ()=>{
         
-        dogInfo.appendChild(img)
-        dogInfo.appendChild(h2)
-        dogInfo.appendChild(btn)
+        if(dogInfo.childNodes.length === 1){
+            const img = document.createElement('img')
+            img.src = `${pup.image}`
+    
+            const h2 = document.createElement('h2')
+            h2.textContent = pup.name
+    
+            const btn = document.createElement('button')
+            btn.textContent = 'Good Dog!'
+            dogInfo.appendChild(img)
+            dogInfo.appendChild(h2)
+            dogInfo.appendChild(btn)
+        }else{
+            dogInfo.innerHTML = ""
+            const img = document.createElement('img')
+            img.src = `${pup.image}`
+    
+            const h2 = document.createElement('h2')
+            h2.textContent = pup.name
+    
+            const btn = document.createElement('button')
+            btn.textContent = 'Good Dog!'
+            dogInfo.appendChild(img)
+            dogInfo.appendChild(h2)
+            dogInfo.appendChild(btn)
 
-        btn.addEventListener('click', ()=>{
-            console.log(`${pup.name}`)
-            if (btn.textContent == 'Good Dog!'){
-                btn.textContent = 'Bad Dog!' 
-            }else{
-                btn.textContent = 'Good Dog!';
-            }
+        }
+     })
+
+        // btn.addEventListener('click', ()=>{
+        //     console.log(`${pup.name}`)
+        //     if (btn.textContent == 'Good Dog!'){
+        //         btn.textContent = 'Bad Dog!' 
+        //     }else{
+        //         btn.textContent = 'Good Dog!';
+        //     }
             
-        })
+        // })
         
     })
   
