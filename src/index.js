@@ -23,9 +23,27 @@ function renderPup(pup){
 
         const btn = document.createElement('button')
         btn.textContent = 'Good Dog!'
+        // btn.style.display = 'block'
+
+        const btn2 = document.createElement('button')
+        btn2.textContent = 'Bad dog'
+        btn2.style.display ='none'
+        dogInfo.appendChild(btn2)
+        
         dogInfo.appendChild(img)
         dogInfo.appendChild(h2)
         dogInfo.appendChild(btn)
+
+        btn.addEventListener('click', ()=>{
+            console.log(`${pup.name}`)
+            if (btn.textContent == 'Good Dog!'){
+                btn.textContent = 'Bad Dog!' 
+            }else{
+                btn.textContent = 'Good Dog!';
+            }
+            
+        })
+        
     })
   
 }
