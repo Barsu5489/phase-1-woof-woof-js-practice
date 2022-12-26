@@ -64,8 +64,32 @@ console.log(dogInfo.childNodes.length)
             btn.addEventListener('click', ()=>{
                 console.log(`${pup.name}`)
                 if (btn.textContent == 'Good Dog!'){
+
+                    let data ={
+                        name:pup.name,
+                        isGoodDog:!true,
+                        image:pup.image
+                    }
+                
                     btn.textContent = 'Bad Dog!' 
-                }else{
+                }else if( btn.textContent = 'Bad Dog!'){
+                    let data ={
+                        name:pup.name,
+                        isGoodDog:true,
+                        image:pup.image
+                    }
+                    fetch(`http://localhost:3000/pups/${pup.id}`,{
+                        method:'PATCH',
+                        body: JSON.stringify(data),
+                        headers:{
+                            'Content-type': 'application/json',
+                        }
+                    }).then(res=>res.json())
+                    .then(data=>{
+                        console.log(data)
+                    }).catch(err=>{
+                        console.log(err)
+                    })
                     btn.textContent = 'Good Dog!';
                 }
                 
